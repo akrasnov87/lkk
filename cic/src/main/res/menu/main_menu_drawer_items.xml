@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigationDrawerProfile"
+            android:icon="@drawable/ic_person_24"
+            android:title="@string/user_profile" />
+        <item
+            android:id="@+id/navigationDrawerSynchronization"
+            android:icon="@drawable/ic_sync_gray_24dp"
+            android:title="@string/synchronization" />
+
+        <item
+            android:id="@+id/navigationDrawerSettings"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="@string/settings" />
+
+        <item
+            android:id="@+id/navigationDrawerMaps"
+            android:icon="@drawable/ic_map_24"
+            android:title="@string/maps" />
+
+        <!--
+
+        <item
+            android:id="@+id/navigationDrawerSearch"
+            android:icon="@drawable/ic_search_24"
+            android:title="@string/search" />
+            -->
+
+    </group>
+
+    <group>
+        <item
+            android:id="@+id/navigationDrawerExit"
+            android:icon="@drawable/ic_exit_gray_24dp"
+            android:title="@string/exit" />
+    </group>
+
+</menu>

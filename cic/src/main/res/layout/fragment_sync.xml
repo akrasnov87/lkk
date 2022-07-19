@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/fragment_sync_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back_24"
+        app:title="@string/synchronization"
+        app:titleTextColor="@color/color_white" />
+
+    <ProgressBar
+        android:id="@+id/fragment_sync_connection_progress"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_margin="@dimen/indent_m"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_sync_toolbar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/fragment_sync_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/indent_m"
+        app:layout_constraintStart_toEndOf="@id/fragment_sync_connection_progress"
+        app:layout_constraintTop_toBottomOf="@id/fragment_sync_toolbar"
+        tools:text="@tools:sample/lorem" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragment_sync_progress_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/fragment_sync_guide_50h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_sync_connection_progress">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/fragment_sync_load"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_m"
+            android:max="600"
+            app:indicatorSize="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:trackThickness="20dp"
+            tools:progress="50" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fragment_sync_load_text"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@tools:sample/lorem" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/fragment_sync_guide_50h"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fragment_sync_logs"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@id/fragment_sync_bottom"
+        app:layout_constraintTop_toBottomOf="@id/fragment_sync_guide_50h" />
+
+
+    <FrameLayout
+        android:id="@+id/fragment_sync_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/indent_m"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fragment_sync_start"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/indent_m"
+            android:layout_marginBottom="@dimen/indent_m"
+            android:padding="@dimen/indent_xl"
+            android:text="@string/start"
+            app:cornerRadius="@dimen/indent_m" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fragment_sync_cancel"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/indent_m"
+            android:layout_marginBottom="@dimen/indent_m"
+            android:padding="@dimen/indent_xl"
+            android:text="@string/cancel"
+            android:visibility="invisible"
+            app:cornerRadius="@dimen/indent_m"
+            tools:visibility="visible" />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

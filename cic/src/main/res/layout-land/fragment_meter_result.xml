@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/fragment_meter_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back_24"
+        app:titleTextColor="@color/color_white" />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/fragment_meter_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@id/fragment_meter_save"
+        app:layout_constraintTop_toBottomOf="@id/fragment_meter_toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/indent_l">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/fragment_meter_main_guide_v50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <ru.mobnius.cic.ui.component.LabelValueView
+                android:id="@+id/fragment_meter_dispatcher_comment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:label="@string/dispatcher_comment"
+                app:layout_constraintEnd_toStartOf="@id/fragment_meter_main_guide_v50"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ru.mobnius.cic.ui.component.LabelValueView
+                android:id="@+id/fragment_meter_account_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:label="@string/account_number"
+                app:layout_constraintEnd_toStartOf="@id/fragment_meter_main_guide_v50"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_meter_dispatcher_comment" />
+
+
+            <ru.mobnius.cic.ui.component.LabelValueView
+                android:id="@+id/fragment_meter_owner_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/indent_m"
+                app:label="@string/subscr_name"
+                app:layout_constraintEnd_toStartOf="@id/fragment_meter_main_guide_v50"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_meter_account_number" />
+
+            <ru.mobnius.cic.ui.component.LabelValueView
+                android:id="@+id/fragment_meter_device_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/indent_m"
+                app:label="@string/device_number"
+                app:layout_constraintEnd_toStartOf="@id/fragment_meter_main_guide_v50"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_meter_owner_name" />
+
+            <ru.mobnius.cic.ui.component.LabelValueView
+                android:id="@+id/fragment_meter_device_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/indent_m"
+                app:label="@string/device_type"
+                app:layout_constraintEnd_toStartOf="@id/fragment_meter_main_guide_v50"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_meter_device_number" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fragment_meter_first_reading_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/indent_m"
+                android:labelFor="@id/fragment_meter_reading_layout"
+                android:text="@string/meter_readings"
+                app:layout_constraintEnd_toStartOf="@id/fragment_meter_main_guide_v50"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_meter_device_type" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/fragment_meter_reading_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/indent_m"
+                app:layout_constraintEnd_toStartOf="@id/fragment_meter_main_guide_v50"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_meter_first_reading_title">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/fragment_meter_first_reading_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/fragment_meter_previous_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/indent_m"
+                    android:text="@string/previous"
+                    app:layout_constraintEnd_toStartOf="@id/fragment_meter_first_reading_guide"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ru.mobnius.cic.ui.component.LabelValueView
+                    android:id="@+id/fragment_meter_previous_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/indent_m"
+                    android:layout_marginEnd="@dimen/indent_m"
+                    app:label="@string/date"
+                    app:layout_constraintEnd_toStartOf="@id/fragment_meter_first_reading_guide"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fragment_meter_previous_label" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/fragment_meter_current_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/current"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/fragment_meter_first_reading_guide"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ru.mobnius.cic.ui.component.LabelValueView
+                    android:id="@+id/fragment_meter_current_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/indent_m"
+                    app:label="@string/date"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/fragment_meter_first_reading_guide"
+                    app:layout_constraintTop_toBottomOf="@id/fragment_meter_current_label" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/fragment_meter_meters_list"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/indent_m"
+                android:overScrollMode="never"
+                app:layout_constraintEnd_toStartOf="@id/fragment_meter_main_guide_v50"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_meter_reading_layout" />
+
+            <ru.mobnius.cic.ui.component.CicSpinner
+                android:id="@+id/fragment_meter_failure_reason"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/indent_m"
+                app:cicSpinnerLabel="@string/failure_reason"
+                app:layout_constraintEnd_toStartOf="@id/fragment_meter_main_guide_v50"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_meter_meters_list" />
+
+            <ru.mobnius.cic.ui.component.CicEditText
+                android:id="@+id/fragment_meter_notice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/indent_m"
+                app:cicEditTextLabel="@string/notice"
+                app:cicEditTextMaxLength="250"
+                app:layout_constraintEnd_toStartOf="@id/fragment_meter_main_guide_v50"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_meter_failure_reason" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fragment_photo_validation_message"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/indent_m"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/fragment_meter_main_guide_v50"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/fragment_meter_image_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/fragment_meter_main_guide_v50"
+                app:layout_constraintTop_toBottomOf="@id/fragment_photo_validation_message" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/fragment_meter_image_list"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/indent_m"
+                android:overScrollMode="never"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/fragment_meter_main_guide_v50"
+                app:layout_constraintTop_toBottomOf="@id/fragment_meter_image_loading" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/fragment_meter_receipt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/receipt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/fragment_meter_main_guide_v50"
+                app:layout_constraintTop_toBottomOf="@id/fragment_meter_image_list" />
+
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/fragment_meter_notification_orp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/notification_orp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/fragment_meter_main_guide_v50"
+                app:layout_constraintTop_toBottomOf="@id/fragment_meter_receipt" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fragment_meter_save"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/indent_m"
+        android:enabled="false"
+        android:padding="@dimen/indent_m"
+        android:text="@string/save"
+        app:cornerRadius="@dimen/indent_m"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

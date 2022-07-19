@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/item_meter_guide_v50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/item_meter_reading_previous_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/indent_m"
+        app:layout_constraintEnd_toStartOf="@id/item_meter_guide_v50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Ночь" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/item_meter_reading_previous"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/indent_m"
+        app:layout_constraintEnd_toStartOf="@id/item_meter_guide_v50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_meter_reading_previous_type"
+        tools:text="12345.00" />
+
+    <ru.mobnius.cic.ui.component.CicEditText
+        android:id="@+id/item_meter_reading_current"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cicEditTextDecimalFormat="true"
+        app:cicEditTextMaxLength="19"
+        app:cicEditTextHelper="@string/must_to_be_not_empty"
+        app:cicEditTextLabel="@string/meter_readings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/item_meter_guide_v50"
+        app:layout_constraintTop_toTopOf="@id/item_meter_reading_previous_type" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

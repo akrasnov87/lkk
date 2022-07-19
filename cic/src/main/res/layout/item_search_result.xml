@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/indent_m"
+    app:cardBackgroundColor="@color/color_white"
+    android:layout_margin="@dimen/indent_s">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/indent_m">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/item_search_result_first"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/indent_m"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/subscr_name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/item_search_result_second"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/indent_m"
+            app:layout_constraintTop_toBottomOf="@id/item_search_result_first"
+            tools:text="@string/address" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/item_search_result_third"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/indent_m"
+            app:layout_constraintTop_toBottomOf="@id/item_search_result_second"
+            tools:text="@string/device_number" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/item_search_result_fourth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/indent_m"
+            app:layout_constraintTop_toBottomOf="@id/item_search_result_third"
+            tools:text="@string/account_number" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

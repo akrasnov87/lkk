@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="176dp"
+    android:background="@color/colorPrimary"
+    tools:ignore="Overdraw">
+
+    <ru.mobnius.cic.ui.component.CircleImageView
+        android:layout_width="@dimen/logo_size"
+        android:layout_height="@dimen/logo_size"
+        android:layout_marginStart="@dimen/indent_xl"
+        android:layout_marginBottom="@dimen/indent_m"
+        android:contentDescription="@string/user_profile"
+        android:src="@mipmap/ic_launcher_agent_round"
+        app:civ_border_color="@color/color_white"
+        app:civ_border_width="@dimen/one_dp"
+        app:layout_constraintBottom_toTopOf="@id/nav_app_name"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/nav_app_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/indent_xl"
+        android:text="@string/app_desc"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="@dimen/font_m"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/nav_user_name" />
+
+    <TextView
+        android:id="@+id/nav_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/indent_xl"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="@dimen/font_m"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="Иванов Иван Иванович"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

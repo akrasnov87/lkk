@@ -1,0 +1,40 @@
+<resources>
+
+    <style name="LkkBlueTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/color_black</item>
+        <item name="colorError">@color/colorAccent</item>
+        <item name="android:textColorHint">@color/colorHint</item>
+        <item name="android:textColorSecondary">@color/color_white</item>
+        <item name="android:windowBackground">@color/colorBackground</item>
+    </style>
+
+
+    <style name="CIC">
+
+    </style>
+
+    <style name="CIC.TextFieldView">
+        <item name="labelTextSize">@dimen/font_xs</item>
+        <item name="valueTextSize">@dimen/font_s</item>
+        <item name="android:layout_marginTop">@dimen/indent_s</item>
+    </style>
+
+    <style name="CIC.TextView">
+
+    </style>
+
+    <style name="CIC.TextView.Label">
+        <item name="android:textColor">@color/colorHint</item>
+        <item name="android:textSize">@dimen/font_xs</item>
+    </style>
+
+    <style name="CIC.HelperText">
+        <item name="android:textColor">@color/colorHint</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+</resources>

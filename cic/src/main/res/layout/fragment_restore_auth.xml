@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/fragment_restore_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back_24"
+        app:title="Восстановление авторизации"
+        app:titleTextColor="@color/color_white" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/fragment_restore_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/indent_xl"
+        android:text="@string/restore_auth_info_message"
+        android:textSize="@dimen/font_m"
+        app:layout_constraintTop_toBottomOf="@id/fragment_restore_toolbar" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fragment_restore_e_mail_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/indent_xl"
+        android:layout_marginEnd="@dimen/indent_xl"
+        android:hint="@string/e_mail"
+        app:helperTextEnabled="true"
+        app:hintEnabled="true"
+        app:layout_constraintTop_toBottomOf="@id/fragment_restore_message">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fragment_restore_e_mail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackground"
+            android:inputType="textEmailAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fragment_restore_button"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/indent_xl"
+        android:layout_marginEnd="@dimen/indent_xl"
+        android:enabled="true"
+        android:padding="@dimen/indent_xl"
+        android:text="@string/restore"
+        app:cornerRadius="@dimen/indent_m"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_restore_e_mail_layout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

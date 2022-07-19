@@ -1,0 +1,4 @@
+gradle.ext.group = 'LKK'
+rootProject.name='Mobnius'
+include ':cic'
+include ':simple-core'

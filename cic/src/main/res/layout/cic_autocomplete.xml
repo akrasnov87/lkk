@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cic_auto_complete_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/LkkBlueTheme"
+        app:endIconDrawable="@drawable/drop_down_arrow_24"
+        app:endIconMode="custom"
+        app:helperText="@string/must_make_choise"
+        app:helperTextEnabled="true"
+        app:helperTextTextAppearance="@style/CIC.HelperText">
+
+        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+            android:id="@+id/cic_auto_complete_field_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="textMultiLine"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/font_s" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+</merge>

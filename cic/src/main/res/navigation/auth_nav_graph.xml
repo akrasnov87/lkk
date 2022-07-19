@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_nav"
+    app:startDestination="@id/auth_default_fragment">
+
+    <include app:graph="@navigation/work_nav_graph" />
+
+    <fragment
+        android:id="@+id/auth_default_fragment"
+        android:name="ru.mobnius.cic.ui.fragment.AuthDefaultFragment"
+        android:label="@string/authorization"
+        tools:layout="@layout/fragment_auth_default">
+        <action
+            android:id="@+id/action_auth_to_routes"
+            app:destination="@id/work_nav"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/auth_nav"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_auth_to_restore"
+            app:destination="@id/reset_auth_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/reset_auth_fragment"
+        android:name="ru.mobnius.cic.ui.fragment.RestoreAuthFragment"
+        tools:layout="@layout/fragment_restore_auth" />
+
+</navigation>

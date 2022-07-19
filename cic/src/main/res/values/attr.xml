@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LabelValueView">
+        <attr name="label" format="reference|string" />
+        <attr name="labelSize" format="reference|dimension" />
+        <attr name="labelColor" format="reference" />
+        <attr name="value" format="reference|string" />
+        <attr name="valueSize" format="reference|dimension" />
+        <attr name="valueColor" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="CicAutocompleteFieldView">
+        <attr name="cicAutoCompleteLabel" format="string" />
+        <attr name="cicAutoCompleteHelperText" format="string" />
+        <attr name="cicAutoCompleteDropDownIcon" format="integer" />
+        <attr name="cicAutoCompleteClearIcon" format="integer" />
+        <attr name="cicAutoCompleteErrorIcon" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="CicSpinner">
+        <attr name="cicSpinnerLabel" format="string|reference" />
+        <attr name="cicSpinnerHelperText" format="string|reference" />
+        <attr name="cicSpinnerDropDownIcon" format="integer" />
+        <attr name="cicSpinnerClearIcon" format="integer" />
+        <attr name="cicSpinnerErrorIcon" format="integer" />
+        <attr name="cicSpinnerBoxBackgroundNone" format="boolean" />
+        <attr name="CicSpinnerDropIconColor" format="reference" />
+        <attr name="cicSpinnerTextColor" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="CicEditText">
+        <attr name="cicEditTextLabel" format="string|reference" />
+        <attr name="cicEditTextHelper" format="string|reference" />
+        <attr name="cicEditTextMaxLength" format="integer" />
+        <attr name="cicEditTextDecimalFormat" format="boolean" />
+        <attr name="cicEditTextDateFormat" format="boolean" />
+        <attr name="cicEditTextSingleLine" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="TextFieldView">
+        <attr name="labelText" format="reference|string" />
+        <attr name="labelTextSize" format="reference" />
+        <attr name="labelTextColor" format="reference" />
+        <attr name="valueText" format="reference|string" />
+        <attr name="valueTextSize" format="reference" />
+        <attr name="valueTextColor" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ExpandableTextLayout">
+        <attr name="titleText" format="string" />
+        <attr name="contentText" format="string" />
+        <attr name="expanded" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="SettingsView">
+        <attr name="settingsLabel" format="reference|string" />
+        <attr name="settingsLabelSize" format="reference" />
+        <attr name="settingsLabelColor" format="reference" />
+        <attr name="settingsLabelIcon" format="reference" />
+        <attr name="settingsValueVisibility" format="boolean" />
+        <attr name="settingsValue" format="reference|string" />
+        <attr name="settingsValueSize" format="reference" />
+        <attr name="settingsValueColor" format="reference" />
+        <attr name="baselineBottomVisible" format="boolean" />
+        <attr name="baselineBottomColor" format="reference" />
+        <attr name="baselineTopVisible" format="boolean" />
+        <attr name="baselineTopColor" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_circle_background_color" format="color" />
+        <attr name="civ_circle_draw_text" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CicCheckableTextView">
+        <attr name="cctv_end_drawable" format="integer" />
+        <attr name="cctv_text" format="string|reference" />
+    </declare-styleable>
+
+</resources>

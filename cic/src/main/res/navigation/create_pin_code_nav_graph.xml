@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/create_pin_code_nav"
+    app:startDestination="@id/pincode_create_fragment">
+
+    <fragment
+        android:id="@+id/pincode_create_fragment"
+        android:name="ru.mobnius.cic.ui.fragment.PinCodeFragment"
+        android:label="@string/pin_code"
+        tools:layout="@layout/fragment_pincode">
+        <argument
+            android:name="isCreate"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_pin_to_routes"
+            app:destination="@id/work_nav"
+            app:popUpTo="@id/create_pin_code_nav"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_pinauth_to_auth"
+            app:destination="@id/auth_default_fragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_bottom"
+            app:popEnterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/slide_out_bottom"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+</navigation>

@@ -1,0 +1,122 @@
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/indent_m"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardBackgroundColor="@color/placeholderBackground"
+    app:cardCornerRadius="@dimen/indent_m"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item_image_main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:padding="@dimen/indent_m">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/item_image_placeholder_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="104dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/item_image_placeholder"
+                android:layout_width="@dimen/indent_xxxl"
+                android:layout_height="@dimen/indent_xxxl"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/indent_l"
+                android:src="@drawable/ic_add_photo_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/indent_l"
+                android:text="@string/add_photo"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_image_placeholder" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/item_image_content_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/item_image_thumb"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:contentDescription="@string/image"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/item_image_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/indent_m"
+                android:textColor="#212121"
+                android:textSize="@dimen/font_m"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/item_image_thumb"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Тип акта" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/item_image_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/indent_m"
+                android:layout_marginTop="@dimen/indent_m"
+                android:textColor="@color/colorHint"
+                android:textSize="@dimen/font_s"
+                app:layout_constraintEnd_toStartOf="@id/item_image_location"
+                app:layout_constraintStart_toEndOf="@id/item_image_thumb"
+                app:layout_constraintTop_toBottomOf="@id/item_image_type"
+                tools:text="08:49:19" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/item_image_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/indent_m"
+                android:drawablePadding="@dimen/indent_m"
+                android:textColor="@color/colorHintLight"
+                android:textSize="@dimen/font_xs"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_image_type"
+                tools:text="-122,0840 : 37,4220" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/item_image_notice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/indent_m"
+                android:layout_marginTop="@dimen/indent_m"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/colorHintLight"
+                android:textSize="@dimen/font_s"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/item_image_thumb"
+                app:layout_constraintTop_toBottomOf="@id/item_image_location"
+                tools:text="Текст примечания, скрытый если он слишком длинный" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

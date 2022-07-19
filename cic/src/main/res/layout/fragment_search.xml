@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/fragment_search_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back_24"
+        app:title="@string/search"
+        app:titleTextColor="@color/color_white" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/fragment_search_filters"
+        app:layout_constraintTop_toBottomOf="@id/fragment_search_toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <RadioGroup
+                android:id="@+id/fragment_search_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/fragement_search_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/indent_s"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/all" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/indent_s"
+                    android:layout_weight="1"
+                    android:text="@string/points" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/indent_s"
+                    android:layout_weight="1"
+                    android:text="@string/routes" />
+            </RadioGroup>
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/fragement_search_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/indent_m"
+                android:background="@drawable/border_background"
+                android:padding="@dimen/one_dp"
+                app:defaultQueryHint="@string/enter_query"
+                app:iconifiedByDefault="false"
+                app:layout_constraintTop_toBottomOf="@id/fragment_search_group"
+                app:queryHint="@string/enter_query"
+                app:searchIcon="@drawable/ic_search_24" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/fragement_search_results"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/indent_m"
+                app:layout_constraintTop_toBottomOf="@id/fragement_search_input" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fragment_search_filters"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/indent_m"
+        android:padding="@dimen/indent_m"
+        android:text="@string/filters"
+        app:cornerRadius="@dimen/indent_m"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

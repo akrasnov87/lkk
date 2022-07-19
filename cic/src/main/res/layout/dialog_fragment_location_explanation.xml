@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:padding="@dimen/indent_l"
+    tools:ignore="Overdraw">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/location_permission_dialog_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/indent_m"
+        android:src="@drawable/ic_location_permission_explanation_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/location_permission_dialog_attention"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dear_user"
+        android:textSize="@dimen/font_m"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/location_permission_dialog_icon" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/location_permission_dialog_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/indent_m"
+        android:text="@string/rational_location_updates_permission_explanation"
+        android:textSize="@dimen/font_xs"
+        app:layout_constraintTop_toBottomOf="@id/location_permission_dialog_attention" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/location_permission_dialog_ok"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/indent_m"
+        android:enabled="true"
+        android:text="@string/good"
+        app:cornerRadius="@dimen/indent_m"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/location_permission_dialog_message" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

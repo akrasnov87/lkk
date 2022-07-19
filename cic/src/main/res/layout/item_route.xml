@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/indent_m">
+
+    <ProgressBar
+        android:id="@+id/item_route_progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/indent_m"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/routes_progress_circle_enabled"
+        android:secondaryProgress="100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/item_route_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/indent_m"
+        android:src="@drawable/ic_info_outline_black_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/info" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/item_route_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/indent_m"
+        android:layout_marginEnd="@dimen/indent_m"
+        android:layout_marginStart="@dimen/indent_m"
+        app:layout_constraintStart_toEndOf="@id/item_route_progress"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/item_route_info"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="@dimen/font_s"
+        tools:text="Название маршрута" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/item_route_count"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/item_route_progress"
+        app:layout_constraintEnd_toStartOf="@id/item_route_end"
+        android:layout_marginTop="@dimen/indent_s"
+        android:layout_marginEnd="@dimen/indent_m"
+        android:layout_marginStart="@dimen/indent_m"
+        app:layout_constraintTop_toBottomOf="@id/item_route_name"
+        android:textColor="@color/colorHintLight"
+        android:textSize="@dimen/font_s"
+        tools:text="количество заданий" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/item_route_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/indent_s"
+        app:layout_constraintTop_toBottomOf="@id/item_route_name"
+        android:textColor="@color/colorHint"
+        android:textSize="@dimen/font_xs"
+        tools:text="До 12.02.2021" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

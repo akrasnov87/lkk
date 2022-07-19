@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/indent_m"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/card_background"
+    android:elevation="@dimen/indent_s"
+    android:padding="@dimen/indent_xl">
+
+    <ru.mobnius.cic.ui.component.LabelValueView
+        android:id="@+id/item_point_account_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/indent_m"
+        android:layout_marginEnd="@dimen/indent_m"
+        app:label="@string/account_number"
+        app:layout_constraintEnd_toStartOf="@id/item_point_reject_status"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.mobnius.cic.ui.component.LabelValueView
+        android:id="@+id/item_point_owner_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/indent_m"
+        android:layout_marginTop="@dimen/indent_m"
+        android:layout_marginEnd="@dimen/indent_m"
+        app:label="@string/fio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_point_account_number" />
+
+    <ru.mobnius.cic.ui.component.LabelValueView
+        android:id="@+id/item_point_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/indent_m"
+        android:layout_marginTop="@dimen/indent_m"
+        android:layout_marginEnd="@dimen/indent_m"
+        app:label="@string/address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_point_owner_name" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/item_point_reject_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/indent_m"
+        android:contentDescription="@string/point_done_status"
+        android:src="@drawable/cic_error_icon"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/item_point_done_status"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/item_point_done_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/indent_m"
+        android:contentDescription="@string/point_done_status"
+        android:src="@drawable/ic_check_green_24dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/item_point_sync_status"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/item_point_sync_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/indent_m"
+        android:contentDescription="@string/point_sync_status"
+        android:src="@drawable/ic_sync_disabled_gray_24dp"
+        app:layout_constraintEnd_toStartOf="@id/item_point_info"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/item_point_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/point_sync_status"
+        android:src="@drawable/ic_info_outline_black_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.mobnius.cic.ui.component.LabelValueView
+        android:id="@+id/item_point_device_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/indent_m"
+        android:layout_marginTop="@dimen/indent_m"
+        android:layout_marginEnd="@dimen/indent_m"
+        app:label="@string/device_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_point_address" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

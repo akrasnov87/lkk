@@ -1,0 +1,16 @@
+-keepattributes SourceFile, LineNumberTable, InnerClasses, EnclosingMethod, Exceptions, Signature
+-keeppackagenames com.huawei**
+-dontshrink
+-dontobfuscate
+-dontoptimize
+-dontwarn com.google.errorprone.annotations.Immutable
+-dontwarn com.huawei.hianalytics.process.HiAnalyticsInstance
+-dontwarn com.huawei.hianalytics.process.HiAnalyticsManager
+-dontwarn com.huawei.hianalytics.v2.HiAnalytics
+-dontwarn com.huawei.hms.framework.network.restclient.hwhttp.plugin.BasePlugin
+-dontwarn com.huawei.hms.framework.network.restclient.hwhttp.plugin.PluginInterceptor
+-dontwarn com.huawei.libcore.io.ExternalStorageFile
+-dontwarn com.huawei.libcore.io.ExternalStorageFileInputStream
+-dontwarn com.huawei.libcore.io.ExternalStorageFileOutputStream
+-dontwarn com.huawei.libcore.io.ExternalStorageRandomAccessFile
+-dontwarn com.huawei.android.os.BuildEx

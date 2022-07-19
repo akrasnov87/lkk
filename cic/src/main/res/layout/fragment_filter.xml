@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:animateLayoutChanges="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/fragment_filter_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back_24"
+        app:title="@string/filters"
+        app:titleTextColor="@color/color_white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/fragment_filter_apply_layout"
+        app:layout_constraintTop_toBottomOf="@id/fragment_filter_toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fragment_filter_search_group_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorMilkContrast"
+                android:drawablePadding="@dimen/indent_m"
+                android:padding="@dimen/indent_xl"
+                android:text="@string/search_area"
+                app:drawableStartCompat="@drawable/ic_checklist_right_24"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/fragment_filter_search_group_separator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorHintDark"
+                app:layout_constraintTop_toBottomOf="@id/fragment_filter_search_group_label" />
+
+            <ru.mobnius.cic.ui.component.CicCheckableTextView
+                android:id="@+id/fragment_filter_all_fields"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/indent_m"
+                app:cctv_text="@string/all_fields"
+                app:layout_constraintTop_toBottomOf="@id/fragment_filter_search_group_separator" />
+
+            <ru.mobnius.cic.ui.component.CicCheckableTextView
+                android:id="@+id/fragment_filter_subscr_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/indent_m"
+                app:cctv_end_drawable="@drawable/ic_clear_red_24"
+                app:cctv_text="@string/subscr_number_only"
+                app:layout_constraintTop_toBottomOf="@id/fragment_filter_all_fields" />
+
+            <ru.mobnius.cic.ui.component.CicCheckableTextView
+                android:id="@+id/fragment_filter_device_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/indent_m"
+                app:cctv_end_drawable="@drawable/ic_clear_red_24"
+                app:cctv_text="@string/device_number_only"
+                app:layout_constraintTop_toBottomOf="@id/fragment_filter_subscr_number" />
+
+            <ru.mobnius.cic.ui.component.CicCheckableTextView
+                android:id="@+id/fragment_filter_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/indent_m"
+                app:cctv_end_drawable="@drawable/ic_clear_red_24"
+                app:cctv_text="@string/address_only"
+                app:layout_constraintTop_toBottomOf="@id/fragment_filter_device_number" />
+
+            <ru.mobnius.cic.ui.component.CicCheckableTextView
+                android:id="@+id/fragment_filter_owner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/indent_m"
+                app:cctv_end_drawable="@drawable/ic_clear_red_24"
+                app:cctv_text="@string/owner_name_only"
+                app:layout_constraintTop_toBottomOf="@id/fragment_filter_device_number" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fragment_filter_subscr_type_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/indent_l"
+                android:background="@color/colorMilkContrast"
+                android:drawablePadding="@dimen/indent_m"
+                android:padding="@dimen/indent_xl"
+                android:text="@string/subscr_type"
+                app:drawableStartCompat="@drawable/ic_person_or_company_24"
+                app:layout_constraintTop_toBottomOf="@id/fragment_filter_owner" />
+
+            <View
+                android:id="@+id/fragment_filter_subscr_type_separator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorHintDark"
+                app:layout_constraintTop_toBottomOf="@id/fragment_filter_subscr_type_label" />
+
+            <ru.mobnius.cic.ui.component.CicCheckableTextView
+                android:id="@+id/fragment_filter_subscr_type_all"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/indent_m"
+                app:cctv_text="@string/any"
+                app:layout_constraintTop_toBottomOf="@id/fragment_filter_subscr_type_separator" />
+
+            <ru.mobnius.cic.ui.component.CicCheckableTextView
+                android:id="@+id/fragment_filter_subscr_type_person"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/indent_m"
+                app:cctv_end_drawable="@drawable/ic_clear_red_24"
+                app:cctv_text="@string/individual_only"
+                app:layout_constraintTop_toBottomOf="@id/fragment_filter_subscr_type_all" />
+
+            <ru.mobnius.cic.ui.component.CicCheckableTextView
+                android:id="@+id/fragment_filter_subscr_type_company"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/indent_m"
+                app:cctv_end_drawable="@drawable/ic_clear_red_24"
+                app:cctv_text="@string/company_only"
+                app:layout_constraintTop_toBottomOf="@id/fragment_filter_subscr_type_person" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fragment_filter_status_group_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorMilkContrast"
+                android:drawablePadding="@dimen/indent_m"
+                android:padding="@dimen/indent_xl"
+                android:text="@string/point_done_status"
+                app:drawableStartCompat="@drawable/ic_point_status_24"
+                app:layout_constraintTop_toBottomOf="@id/fragment_filter_subscr_type_company" />
+
+            <View
+                android:id="@+id/fragment_filter_status_separator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorHintDark"
+                app:layout_constraintTop_toBottomOf="@id/fragment_filter_status_group_label" />
+
+            <ru.mobnius.cic.ui.component.CicCheckableTextView
+                android:id="@+id/fragment_filter_point_status_all"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/indent_m"
+                app:cctv_text="@string/all_points"
+                app:layout_constraintTop_toBottomOf="@id/fragment_filter_status_separator"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <ru.mobnius.cic.ui.component.CicCheckableTextView
+                android:id="@+id/fragment_filter_point_status_done"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/indent_m"
+                app:cctv_end_drawable="@drawable/ic_clear_red_24"
+                app:cctv_text="@string/done_points"
+                app:layout_constraintTop_toBottomOf="@id/fragment_filter_point_status_all" />
+
+            <ru.mobnius.cic.ui.component.CicCheckableTextView
+                android:id="@+id/fragment_filter_point_status_undone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/indent_m"
+                app:cctv_end_drawable="@drawable/ic_clear_red_24"
+                app:cctv_text="@string/undone_points"
+                app:layout_constraintTop_toBottomOf="@id/fragment_filter_point_status_done" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragment_filter_apply_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/indent_m"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fragment_filter_apply"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/color_white"
+            android:enabled="true"
+            android:padding="@dimen/indent_m"
+            android:text="@string/apply"
+            app:cornerRadius="@dimen/indent_m"
+            app:icon="@drawable/ic_done_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

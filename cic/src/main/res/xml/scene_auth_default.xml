@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+    <Transition
+        motion:constraintSetEnd="@+id/fragment_auth_default_constraint_end"
+        motion:constraintSetStart="@+id/fragment_auth_default_constraint_start"
+        motion:duration="1000"
+        motion:motionInterpolator="linear">
+        <OnSwipe
+            motion:dragDirection="dragRight"
+            motion:touchAnchorId="@+id/fragment_auth_default_title"
+            motion:touchAnchorSide="right"
+            motion:touchRegionId="@id/fragment_auth_default_title"/>
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/fragment_auth_default_constraint_start">
+        <Constraint android:id="@id/fragment_auth_default_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@id/fragment_auth_default_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" >
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="0.0" />
+        </Constraint>
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/fragment_auth_default_constraint_end">
+        <Constraint android:id="@id/fragment_auth_default_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@id/fragment_auth_default_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" >
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="1.0" />
+        </Constraint>
+    </ConstraintSet>
+
+</MotionScene>

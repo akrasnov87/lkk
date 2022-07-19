@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/work_nav"
+    app:startDestination="@id/route_fragment">
+
+    <include app:graph="@navigation/create_pin_code_nav_graph" />
+
+    <fragment
+        android:id="@+id/route_fragment"
+        android:name="ru.mobnius.cic.ui.fragment.RouteFragment"
+        tools:layout="@layout/fragment_route">
+        <action
+            android:id="@+id/action_route_to_settings"
+            app:destination="@id/settings_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_route_to_profile"
+            app:destination="@id/profile_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_route_to_route_info"
+            app:destination="@id/route_info_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right">
+            <argument
+                android:name="routeItem"
+                android:defaultValue="@null"
+                app:argType="ru.mobnius.cic.ui.model.RouteItem"
+                app:nullable="true" />
+        </action>
+
+        <action
+            android:id="@+id/action_route_to_point"
+            app:destination="@id/point_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right">
+            <argument
+                android:name="routeId"
+                app:argType="java.lang.String" />
+            <argument
+                android:name="routeTitle"
+                app:argType="java.lang.String" />
+        </action>
+
+        <action
+            android:id="@+id/action_route_to_sync"
+            app:destination="@id/sync_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_route_to_map"
+            app:destination="@id/map_container_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_route_to_search"
+            app:destination="@id/search_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/search_fragment"
+        android:name="ru.mobnius.cic.ui.fragment.SearchFragment"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/map_container_fragment"
+        android:name="ru.mobnius.cic.ui.fragment.MapContainerFragment"
+        tools:layout="@layout/fragment_map" >
+        <action
+            android:id="@+id/action_map_to_task"
+            app:destination="@id/meter_result_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right">
+            <argument
+                android:name="pointItem"
+                app:argType="ru.mobnius.cic.ui.model.PointItem" />
+            <argument
+                android:name="position"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/point_fragment"
+        android:name="ru.mobnius.cic.ui.fragment.PointFragment"
+        tools:layout="@layout/fragment_point">
+        <argument
+            android:name="routeId"
+            app:argType="java.lang.String" />
+        <argument
+            android:name="routeTitle"
+            app:argType="java.lang.String" />
+        <action
+            android:id="@+id/action_point_to_point_info"
+            app:destination="@id/point_info_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right">
+            <argument
+                android:name="pointItem"
+                android:defaultValue="@null"
+                app:argType="ru.mobnius.cic.ui.model.PointItem"
+                app:nullable="true" />
+            <argument
+                android:name="position"
+                app:argType="integer" />
+        </action>
+
+        <action
+            android:id="@+id/action_point_to_filter"
+            app:destination="@id/filter_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_point_to_task"
+            app:destination="@id/meter_result_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right">
+            <argument
+                android:name="pointItem"
+                app:argType="ru.mobnius.cic.ui.model.PointItem" />
+            <argument
+                android:name="position"
+                app:argType="integer" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/meter_result_fragment"
+        android:name="ru.mobnius.cic.ui.fragment.MeterResultFragment"
+        tools:layout="@layout/fragment_meter_result">
+        <argument
+            android:name="pointItem"
+            app:argType="ru.mobnius.cic.ui.model.PointItem" />
+        <argument
+            android:name="position"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_meter_to_photo_type"
+            app:destination="@id/photo_type_dialog"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_bottom"
+            app:popEnterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/slide_out_bottom">
+            <argument
+                android:name="imageType"
+                android:defaultValue="@null"
+                app:argType="ru.mobnius.cic.ui.model.ImageType"
+                app:nullable="true" />
+            <argument
+                android:name="isLoadedFromDb"
+                android:defaultValue="false"
+                app:argType="boolean" />
+
+        </action>
+        <action
+            android:id="@+id/action_meter_to_image"
+            app:destination="@id/image_view_fragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_bottom"
+            app:popEnterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/slide_out_bottom">
+            <argument
+                android:name="imageId"
+                app:argType="java.lang.String" />
+            <argument
+                android:name="isPointDone"
+                app:argType="boolean" />
+
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/image_view_fragment"
+        android:name="ru.mobnius.cic.ui.fragment.ImageViewFragment"
+        tools:layout="@layout/fragment_image">
+        <argument
+            android:name="imageId"
+            app:argType="java.lang.String" />
+        <argument
+            android:name="isPointDone"
+            app:argType="boolean" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/photo_type_dialog"
+        android:name="ru.mobnius.cic.ui.fragment.PhotoTypeDialogFragment"
+        tools:layout="@layout/dialog_fragment_image_type">
+        <argument
+            android:name="imageType"
+            android:defaultValue="@null"
+            app:argType="ru.mobnius.cic.ui.model.ImageType"
+            app:nullable="true" />
+        <argument
+            android:name="isLoadedFromDb"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </dialog>
+    <fragment
+        android:id="@+id/filter_fragment"
+        android:name="ru.mobnius.cic.ui.fragment.FilterFragment"
+        tools:layout="@layout/fragment_filter" />
+
+    <fragment
+        android:id="@+id/sync_fragment"
+        android:name="ru.mobnius.cic.ui.fragment.SyncFragment"
+        tools:layout="@layout/fragment_sync" />
+
+
+    <fragment
+        android:id="@+id/point_info_fragment"
+        android:name="ru.mobnius.cic.ui.fragment.PointInfoFragment"
+        tools:layout="@layout/fragment_point_info">
+        <argument
+            android:name="pointItem"
+            android:defaultValue="@null"
+            app:argType="ru.mobnius.cic.ui.model.PointItem"
+            app:nullable="true" />
+        <argument
+            android:name="position"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/route_info_fragment"
+        android:name="ru.mobnius.cic.ui.fragment.RouteInfoFragment"
+        tools:layout="@layout/fragment_route_info">
+        <argument
+            android:name="routeItem"
+            android:defaultValue="@null"
+            app:argType="ru.mobnius.cic.ui.model.RouteItem"
+            app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/personal_account_fragment"
+        android:name="ru.mobnius.cic.ui.fragment.PersonalAccountFragment"
+        tools:layout="@layout/fragment_personal_account" />
+
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="ru.mobnius.cic.ui.fragment.ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profile_to_personal_account"
+            app:destination="@id/personal_account_fragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_bottom"
+            app:popEnterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/slide_out_bottom"
+            app:popUpToInclusive="false"/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/settings_fragment"
+        android:name="ru.mobnius.cic.ui.fragment.SettingsFragment"
+        tools:layout="@layout/fragment_settings">
+
+        <action
+            android:id="@+id/action_reset_prefs"
+            app:destination="@id/auth_nav"
+            app:popUpTo="@id/work_nav"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_settings_to_pin"
+            app:destination="@id/create_pin_code_nav"
+            app:popUpTo="@id/route_fragment"
+            app:popUpToInclusive="true">
+            <argument
+                android:name="isCreate"
+                android:defaultValue="true"
+                app:argType="boolean" />
+        </action>
+    </fragment>
+
+
+</navigation>

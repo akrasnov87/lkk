@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "144448839453",
+    "project_id": "lkk-android",
+    "storage_bucket": "lkk-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144448839453:android:b8cdfebb6e51e05ecb4bf4",
+        "android_client_info": {
+          "package_name": "ru.mobnius.cic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "144448839453-at3prma7gbf1ep9s1lids8ttas7928tb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ru.mobnius.cic",
+            "certificate_hash": "5abfdfb249d5367669e65d77b8be913caf1648da"
+          }
+        },
+        {
+          "client_id": "144448839453-ms7k6imfdf640e876p69gaqsgqook1mb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyrXmnz6A89HnvKjSKAvTsVNsE2BdP2fg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "144448839453-ms7k6imfdf640e876p69gaqsgqook1mb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

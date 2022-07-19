@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+    <Transition
+        motion:constraintSetEnd="@+id/fragment_profile_constraint_end"
+        motion:constraintSetStart="@+id/fragment_profile_constraint_start"
+        motion:duration="1000"
+        motion:motionInterpolator="linear">
+        <OnSwipe
+            motion:dragDirection="dragUp"
+            motion:touchAnchorId="@+id/fragment_profile_scroll"
+            motion:touchAnchorSide="top" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/fragment_profile_constraint_start">
+        <Constraint
+            android:id="@id/fragment_profile_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/fragment_profile_toolbar" />
+        <Constraint
+            android:id="@id/fragment_profile_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@id/fragment_profile_user_photo"
+            android:layout_width="@dimen/default_expanded_image_size"
+            android:layout_height="@dimen/default_expanded_image_size"
+            android:layout_marginStart="@dimen/indent_m"
+            android:layout_marginBottom="@dimen/indent_m"
+            motion:layout_constraintBottom_toBottomOf="@id/fragment_profile_toolbar"
+            motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            android:id="@id/fragment_profile_user_name_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/indent_m"
+            motion:layout_constraintBottom_toBottomOf="@id/fragment_profile_user_photo"
+            motion:layout_constraintStart_toEndOf="@id/fragment_profile_user_photo"
+            motion:layout_constraintTop_toTopOf="@id/fragment_profile_user_photo" />
+        <Constraint
+            android:id="@id/fragment_profile_user_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/indent_m"
+            motion:layout_constraintStart_toEndOf="@id/fragment_profile_user_photo"
+            motion:layout_constraintTop_toBottomOf="@id/fragment_profile_user_name_title" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/fragment_profile_constraint_end">
+
+        <Constraint
+            android:id="@id/fragment_profile_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/fragment_profile_toolbar" />
+        <Constraint
+            android:id="@id/fragment_profile_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@id/fragment_profile_user_photo"
+            android:layout_width="@dimen/default_collapsed_image_size"
+            android:layout_height="@dimen/default_collapsed_image_size"
+            android:layout_marginStart="64dp"
+            motion:layout_constraintBottom_toBottomOf="@id/fragment_profile_toolbar"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="@id/fragment_profile_toolbar" />
+        <Constraint
+            android:id="@id/fragment_profile_user_name_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/indent_m"
+            motion:layout_constraintBottom_toBottomOf="@id/fragment_profile_user_photo"
+            motion:layout_constraintStart_toEndOf="@id/fragment_profile_user_photo"
+            motion:layout_constraintTop_toTopOf="@id/fragment_profile_user_photo" />
+        <Constraint
+            android:id="@id/fragment_profile_user_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleY=".7"
+            android:scaleX=".7"
+            android:transformPivotX="0dp"
+            android:transformPivotY="0dp"
+            android:layout_marginStart="@dimen/indent_m"
+            motion:layout_constraintStart_toEndOf="@id/fragment_profile_user_photo"
+            motion:layout_constraintTop_toBottomOf="@id/fragment_profile_user_name_title" />
+    </ConstraintSet>
+
+</MotionScene>

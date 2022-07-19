@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/item_sync_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorHintDark"
+        android:textSize="@dimen/font_s"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="справочники" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/item_sync_progress_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:max="100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_sync_description" />
+
+    <!-- информация о скорости и прочее -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/item_sync_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/indent_m"
+        android:layout_marginEnd="@dimen/indent_m"
+        android:gravity="end"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="@dimen/font_s"
+        app:layout_constraintTop_toBottomOf="@id/item_sync_progress_indicator"
+        tools:text="3 мин. (65 кбит\\сек.)"
+        tools:textColor="@color/colorHint" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

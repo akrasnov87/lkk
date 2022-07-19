@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/fragment_settings_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:navigationIcon="@drawable/ic_arrow_back_24"
+        app:title="@string/settings"
+        app:titleTextColor="@color/color_white" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ru.mobnius.cic.ui.component.SettingsView
+                android:id="@+id/fragment_settings_common"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:settingsLabel="@string/common_settings"
+                app:settingsValueVisibility="false" />
+
+            <ru.mobnius.cic.ui.component.SettingsView
+                android:id="@+id/fragment_settings_version"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_common"
+                app:settingsLabel="@string/version"
+                app:settingsLabelColor="@color/colorHint"
+                app:settingsLabelIcon="@drawable/ic_version_24"
+                app:settingsValue="@string/zero_version"
+                app:valueColor="@color/colorHint" />
+
+            <ru.mobnius.cic.ui.component.SettingsView
+                android:id="@+id/fragment_settings_reset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_version"
+                app:settingsLabel="@string/pref_reset"
+                app:settingsLabelColor="@color/colorHint"
+                app:settingsLabelIcon="@drawable/ic_reset_24"
+                app:settingsValue="@string/pref_reset_explanation"
+                app:valueColor="@color/colorHint"
+                tools:layout_editor_absoluteX="-68dp" />
+
+            <ru.mobnius.cic.ui.component.SettingsView
+                android:id="@+id/fragment_settings_security"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:baselineTopColor="@color/colorAccent"
+                app:baselineTopVisible="true"
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_reset"
+                app:settingsLabel="@string/security"
+                app:settingsValueVisibility="false" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/fragment_settings_enable_pin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_pin_icon_24"
+                android:drawablePadding="@dimen/indent_xxl"
+                android:paddingStart="@dimen/indent_l"
+                android:paddingEnd="@dimen/indent_xl"
+                android:text="@string/enable_pin"
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_security" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/fragment_settings_enable_touch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_fingerprint_red_24"
+                android:drawablePadding="@dimen/indent_xxl"
+                android:paddingStart="@dimen/indent_l"
+                android:paddingEnd="@dimen/indent_xl"
+                android:text="@string/enable_touch"
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_enable_pin" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/fragment_settings_urls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:overScrollMode="never"
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_enable_touch" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fragment_settings_disable_debug"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/indent_l"
+                android:paddingEnd="@dimen/indent_xl"
+                android:text="@string/disable_debug_mode"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_urls" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>

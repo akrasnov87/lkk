@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_collapsed_image_size">45dp</dimen>
+    <dimen name="default_expanded_image_size">105dp</dimen>
+    <dimen name="one_dp">1dp</dimen>
+    <dimen name="indent_xs">2dp</dimen>
+    <dimen name="indent_s">4dp</dimen>
+    <dimen name="indent_m">8dp</dimen>
+    <dimen name="indent_l">12dp</dimen>
+    <dimen name="indent_xl">16dp</dimen>
+    <dimen name="indent_xxl">24dp</dimen>
+    <dimen name="indent_xxxl">36dp</dimen>
+    <dimen name="indent_xxxxl">48dp</dimen>
+
+    <dimen name="font_l">20sp</dimen>
+    <dimen name="font_m">18sp</dimen>
+    <dimen name="font_s">16sp</dimen>
+    <dimen name="font_xs">14sp</dimen>
+    <dimen name="font_xxs">12sp</dimen>
+
+    <dimen name="logo_size">72dp</dimen>
+</resources>

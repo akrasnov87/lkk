@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryDark">#044069</color>
+    <color name="colorPrimary">#004f8c</color>
+    <color name="colorPrimaryLight">#35baf6</color>
+    <color name="colorPrimaryText">#212121</color>
+    <color name="colorSecondaryText">#FFFFFF</color>
+    <color name="colorHint">#878787</color>
+    <color name="colorAccent">#E73B23</color>
+    <color name="colorBackground">#FFFAFA</color>
+    <color name="colorHintLight">#b7b7b7</color>
+    <color name="colorSecondaryAccent">#ffa726</color>
+    <color name="colorHintDark">#5a5a5a</color>
+
+    <color name="map_user_point">#FEA427</color>
+    <color name="darkGreen">#098011</color>
+    <color name="green">#00e676</color>
+    <color name="lightGreen">#66ffa6</color>
+    <color name="map_undone_point">#FD001A</color>
+    <color name="map_cluster_done">#84BF88</color>
+    <color name="map_cluster_undone">#FE7F8C</color>
+    <color name="map_cluster_inspector">#FED293</color>
+    <color name="map_cluster_inspector_last_point">#D3D3D3</color>
+    <color name="color_white">#ffffff</color>
+    <color name="color_black">#000000</color>
+    <color name="colorMilkContrast">#fff5fe</color>
+    <color name="placeholderBackground">#f5f5f5</color>
+
+</resources>

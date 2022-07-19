@@ -1,0 +1,6 @@
+[submodule "core"]
+	path = core
+	url = http://git/cic/android-core
+[submodule "simple-core"]
+	path = simple-core
+	url = http://git/lib/simple-core.git

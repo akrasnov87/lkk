@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/fragment_auth_default_motion"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:layoutDescription="@xml/scene_auth_default"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fragment_auth_default_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/indent_m"
+            android:paddingStart="@dimen/indent_xl"
+            android:paddingEnd="@dimen/indent_xl"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/font_s"
+            tools:text="Версия: 4.2.0.520" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fragment_auth_default_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/indent_m"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-medium"
+            android:paddingStart="@dimen/indent_xl"
+            android:paddingEnd="@dimen/indent_xl"
+            android:text="@string/app_desc"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/font_l" />
+
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+    <ScrollView
+        android:id="@+id/fragment_auth_default_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_auth_default_motion">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ProgressBar
+                android:id="@+id/fragment_auth_default_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/fragment_auth_default_login_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_horizontal_50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.4" />
+
+            <!-- логин -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fragment_auth_default_login_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/indent_xl"
+                android:layout_marginEnd="@dimen/indent_xl"
+                android:layout_marginBottom="@dimen/indent_xl"
+                android:hint="@string/login"
+                app:endIconDrawable="@drawable/ic_clear_text_24dp"
+                app:endIconMode="custom"
+                app:endIconTint="@color/colorPrimary"
+                app:helperTextEnabled="true"
+                app:hintEnabled="true"
+                app:layout_constraintBottom_toTopOf="@id/guide_horizontal_50">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fragment_auth_default_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorBackground"
+                    android:inputType="textNoSuggestions" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fragment_auth_default_password_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/indent_xl"
+                android:layout_marginEnd="@dimen/indent_xl"
+                android:hint="@string/password"
+                app:helperTextEnabled="true"
+                app:hintEnabled="true"
+                app:layout_constraintTop_toBottomOf="@id/guide_horizontal_50"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/colorPrimary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fragment_auth_default_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorBackground"
+                    android:inputType="textPassword" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fragment_auth_default_sign_in"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/indent_xl"
+                android:layout_marginEnd="@dimen/indent_xl"
+                android:padding="@dimen/indent_xl"
+                android:enabled="true"
+                android:text="@string/enter"
+                app:cornerRadius="@dimen/indent_m"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_auth_default_password_layout" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fragment_auth_default_forgot_auth_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/indent_m"
+                android:padding="@dimen/indent_m"
+                android:text="@string/forgot_auth_info"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@id/fragment_auth_default_sign_in"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/fragment_auth_default_password_layout"
+                app:layout_constraintTop_toTopOf="@id/fragment_auth_default_sign_in" />
+
+            <ru.mobnius.cic.ui.component.CircleImageView
+                android:id="@+id/fragment_auth_default_fingerprint"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:src="@drawable/ic_fingerprint_24"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_auth_default_sign_in"
+                tools:visibility="visible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

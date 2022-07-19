@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/map_help_current"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_margin="24dp"
+        android:contentDescription="@string/current_location"
+        android:src="@drawable/ic_user_location_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/map_help_current_location"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:labelFor="@id/map_help_current"
+        android:text="@string/current_location"
+        android:maxLines="2"
+        app:layout_constraintStart_toEndOf="@id/map_help_current"
+        app:layout_constraintTop_toTopOf="@id/map_help_current"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/map_help_done_point_image"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_margin="24dp"
+        android:contentDescription="@string/task_doned"
+        android:src="@drawable/ic_done_point_location_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/map_help_current" />
+
+    <TextView
+        android:id="@+id/map_help_done_point_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:labelFor="@id/map_help_current"
+        android:text="@string/task_doned"
+        app:layout_constraintStart_toEndOf="@id/map_help_done_point_image"
+        app:layout_constraintTop_toTopOf="@id/map_help_done_point_image" />
+
+    <ImageView
+        android:id="@+id/map_help_undone_point"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_margin="24dp"
+        android:contentDescription="@string/task_undoned"
+        android:src="@drawable/ic_undone_point_location_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/map_help_done_point_image" />
+
+    <TextView
+        android:id="@+id/map_help_undone_point_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:labelFor="@id/map_help_current"
+        android:maxLines="2"
+        android:text="@string/task_undoned"
+        app:layout_constraintStart_toEndOf="@id/map_help_undone_point"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/map_help_undone_point" />
+
+
+    <RelativeLayout
+        android:id="@+id/map_help_done_cluster_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/map_help_undone_point_label">
+
+        <ImageView
+            android:id="@+id/map_help_done_cluster"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="@string/region_done"
+            android:src="@drawable/done_point_circle_background" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/map_help_done_cluster"
+            android:layout_alignTop="@+id/map_help_done_cluster"
+            android:layout_alignEnd="@+id/map_help_done_cluster"
+            android:layout_alignBottom="@+id/map_help_done_cluster"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            android:gravity="center"
+            android:text="@string/n"
+            android:textColor="#000000" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/map_help_done_cluster_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:labelFor="@id/map_help_done_cluster_rl"
+        android:maxLines="4"
+        android:text="@string/region_done"
+        app:layout_constraintBottom_toBottomOf="@id/map_help_done_cluster_rl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/map_help_done_cluster_rl"
+        app:layout_constraintTop_toTopOf="@id/map_help_done_cluster_rl" />
+
+    <RelativeLayout
+        android:id="@+id/map_help_undone_cluster_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/map_help_done_cluster_rl">
+
+        <ImageView
+            android:id="@+id/map_help_undone_cluster"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="@string/region_undoned"
+            android:src="@drawable/undone_point_circle_bakground" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/map_help_undone_cluster"
+            android:layout_alignTop="@+id/map_help_undone_cluster"
+            android:layout_alignEnd="@+id/map_help_undone_cluster"
+            android:layout_alignBottom="@+id/map_help_undone_cluster"
+            android:layout_margin="1dp"
+            android:gravity="center"
+            android:text="@string/n"
+            android:textColor="#000000" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/map_help_undone_cluster_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:labelFor="@id/map_help_done_cluster_rl"
+        android:maxLines="4"
+        android:text="@string/region_undoned"
+        app:layout_constraintBottom_toBottomOf="@id/map_help_undone_cluster_rl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/map_help_undone_cluster_rl"
+        app:layout_constraintTop_toTopOf="@id/map_help_undone_cluster_rl" />
+
+    <RelativeLayout
+        android:id="@+id/map_help_user_cluster_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/map_help_undone_cluster_rl">
+
+        <ImageView
+            android:id="@+id/map_help_user_cluster"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="@string/region_current_location"
+            android:src="@drawable/user_point_circle_background" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/map_help_user_cluster"
+            android:layout_alignTop="@+id/map_help_user_cluster"
+            android:layout_alignEnd="@+id/map_help_user_cluster"
+            android:layout_alignBottom="@+id/map_help_user_cluster"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            android:gravity="center"
+            android:text="@string/n"
+            android:textColor="#000000" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/map_help_area_current_location"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:labelFor="@id/map_help_done_cluster_rl"
+        android:maxLines="4"
+        android:text="@string/region_current_location"
+        app:layout_constraintBottom_toBottomOf="@id/map_help_user_cluster_rl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/map_help_user_cluster_rl"
+        app:layout_constraintTop_toTopOf="@id/map_help_user_cluster_rl" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

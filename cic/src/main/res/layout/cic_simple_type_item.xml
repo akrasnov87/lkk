@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <CheckedTextView xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/cic_simple_type_item_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:padding="@dimen/indent_xl"
+        tools:ignore="PrivateResource" />
+</androidx.appcompat.widget.LinearLayoutCompat>

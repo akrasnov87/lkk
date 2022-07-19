@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/fragment_image_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back_24"
+        app:titleTextColor="@color/color_white" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/fragment_image_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/indent_m"
+        android:textColor="@color/biometric_error_color"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/fragment_image_toolbar"
+        tools:visibility="visible"
+        tools:text="@string/error"/>
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/fragment_image_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:padding="@dimen/indent_m"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/fragment_image_error"
+        app:trackCornerRadius="@dimen/indent_m"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/fragment_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/indent_m"
+        android:contentDescription="@string/image"
+        android:scaleType="matrix"
+        app:layout_constraintBottom_toTopOf="@id/fragmetn_image_rotate"
+        app:layout_constraintTop_toBottomOf="@id/fragment_image_progress"
+        tools:layout_editor_absoluteX="-16dp" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fragmetn_image_rotate"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_margin="@dimen/indent_m"
+        android:background="@drawable/ic_rotate_image_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fragment_image_center"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_margin="@dimen/indent_m"
+        android:background="@drawable/ic_center_image_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/fragment_image_delete"
+        app:layout_constraintStart_toEndOf="@id/fragmetn_image_rotate" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fragment_image_delete"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_margin="@dimen/indent_m"
+        android:background="@drawable/ic_delete_image_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_image_view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

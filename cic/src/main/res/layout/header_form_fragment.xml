@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true">
+
+    <ru.mobnius.cic.ui.component.TextFieldView
+        android:id="@+id/standart_top_subscr_number"
+        style="@style/CIC.TextFieldView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:labelText="@string/account_number"
+        tools:valueText="12323231312" />
+
+    <ru.mobnius.cic.ui.component.TextFieldView
+        android:id="@+id/standart_top_subscr_name"
+        style="@style/CIC.TextFieldView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:labelText="@string/fio"
+        tools:valueText="Иванов Иван Иванович" />
+
+    <ru.mobnius.cic.ui.component.TextFieldView
+        android:id="@+id/standart_top_address"
+        style="@style/CIC.TextFieldView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:labelText="@string/address"
+        tools:valueText="г. Чебоксары" />
+
+    <ru.mobnius.cic.ui.component.TextFieldView
+        android:id="@+id/standart_top_el_address"
+        style="@style/CIC.TextFieldView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:labelText="@string/el_connection_address"
+        tools:valueText="ТП.РП\Верхне-нижний\" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp">
+
+        <TextView
+            android:id="@+id/standart_top_phone_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/telephone"
+            android:textColor="@color/colorHint"
+            android:textSize="@dimen/font_xs"
+            android:labelFor="@id/standart_top_phone"/>
+
+        <EditText
+            android:id="@+id/standart_top_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/standart_top_phone_label"
+            android:layout_alignParentStart="true"
+            android:background="@android:color/transparent"
+            android:importantForAutofill="no"
+            android:inputType="phone"
+            android:textSize="@dimen/font_s"
+            tools:text="1234165844"/>
+
+        <ImageView
+            android:id="@+id/standart_top_phone_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/standart_top_phone_label"
+            android:layout_alignBottom="@id/standart_top_phone"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_phone_call_green_24"
+            android:contentDescription="@string/telephone" />
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/standart_top_technical_metering"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:text="@string/tech_meters"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <ru.mobnius.cic.ui.component.TextFieldView
+        android:id="@+id/standart_top_device_model"
+        style="@style/CIC.TextFieldView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:labelText="@string/device_model"
+        tools:valueText="ПУЭ-1Л-25" />
+
+    <LinearLayout
+        android:id="@+id/standart_top_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            style="@style/CIC.TextView.Label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/indent_m"
+            android:text="@string/device_model" />
+
+        <ru.mobnius.cic.ui.component.CicAutocompleteFieldView
+            android:id="@+id/standart_top_acfv_device_model"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint=""
+            android:inputType="text"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            style="@style/CIC.TextView.Label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/indent_s"
+            android:text="@string/device_number" />
+
+        <EditText
+            android:id="@+id/standart_top_et_device_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint=""
+            android:inputType="text"
+            tools:ignore="LabelFor"
+            android:importantForAutofill="no" />
+
+
+    </LinearLayout>
+
+    <ru.mobnius.cic.ui.component.TextFieldView
+        android:id="@+id/standart_top_device_number"
+        style="@style/CIC.TextFieldView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:labelText="@string/device_number"
+        tools:valueText="55-5525-41" />
+
+</LinearLayout>

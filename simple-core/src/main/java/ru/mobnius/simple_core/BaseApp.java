@@ -1,0 +1,153 @@
+package ru.mobnius.simple_core;
+
+import ru.mobnius.simple_core.preferences.GeneralPreferences;
+
+public abstract class BaseApp extends android.app.Application {
+    public final static int LOGIN = 0;
+    public final static int PIN = 1;
+    public final static int TOUCH = 2;
+    public final static int RESPONSE_OK = 200;
+    public final static int RESPONSE_FAIL = 500;
+    public final static int CONNECTION_TIMEOUT = 3000;
+
+
+    public static String USER_AUTHORIZED = "Пользователь авторизован";
+    public static String AUTH_RESULT_FORMAT_NOT_JSON = "Результат авторизации не является JSON";
+    public static String ERROR = "Ошибка";
+    public static String CONNECTION_ERROR_WITH_CODE = "Ошибка соединения, код %d";
+    public static String ERROR_ENG = "error";
+    public static String AUTH_RESPONSE_TRANSFORMATION_ERROR = "Ошибка в преобразовании ответа на авторизацию";
+    public static String ERROR_CREATING_AUTH_REQUEST = "Ошибка создания запроса на авторизацию";
+    public static String ERROR_CREATING_RESTORE_REQUEST = "Ошибка создания запроса на восстановление учетных данных";
+    public static String GENERAL_AUTH_ERROR = "Общая ошибка авторизации";
+    public static String SERVER_JSON_PARSE_ERROR = "Ошибка чтения JSON ответа от сервера";
+    public static String AUTH_RESTORE_SUCCESS = "Информация для восстановления учетных данных успешно отправлена";
+    public static String DOWNLOAD_PROBLEM = "Проблема с загрузкой";
+    public static String UNKNOWN_ENG = "unknown";
+    public static String NOTIFICATION = "Уведомление";
+    public static String LOCATION_SERVICE_NOTIFICATION_CHANNEL_DESCRIPTION = "Уведомление службы определения текущего местоположения пользователя";
+    public static String DEFAULT_NOTIFICATION_CHANNEL_DESCRIPTION = "Канал для получения стандартных уведомлений о работе приложения";
+    public static String LOCATION_SERVICE_CHANNEL_NAME = "Служба геолокации";
+    public static String DEFAULT_NOTIFICATIONS_CHANNEL_NAME = "Стандартные уведомления";
+    public static String LOCATION_SERVICE_DESCRIPTION_MESSAGE = "Фоновая служба получает данные о текущем местоположении";
+    public static String ERROR_NO_DB_CONNECTION = "Ошибка, потеряно соединение с БД";
+    public static String ERROR_NO_AUTHORIZATION_DATA = "Ошибка, потеряны данные авторизации";
+    public static String TASK_SAVED_SUCCESSFULLY = "Задание успешно сохранено";
+    public static String SENDED_RESULT_IS_NOT_JSON = "Переданный объект не является JSON";
+    public static String SOCKET_PROBLEM = "Проблемы с соединением по Websocket";
+    public static String ATTACHMENTS = "Вложения";
+    public static String COMMON = "Общие";
+    public static String DICTIONARY = "Справочники";
+    public static String META_PACKAGE_CREATE_ERROR_MESSAGE = "Не удалось создать объект мета информции о пакете";
+    public static String META_SIZE_CREATE_ERROR_MESSAGE = "Не удалось создать объект мета информации о размере пакета";
+    public static String META_SIZE_STATUS_WRONG_MESSAGE = "Статус пакета %d не равен %d";
+    public static String NO_TID_IN_TID_LIST = "Список транспортных идентификаторов не содержит текущего транспортного идентификатора пакета";
+    public static String SYNC_COMPLETED = "Синхронизация завершена";
+    public static String FILE_PACKAGE = "Пакет file = ";
+    public static String FILE_TID_IS_EMPTY = "Идентификатор трансфера файлов пустой";
+    public static String NO_META_DATA_FROM_SERVER = "Нет мета данных от сервера";
+    public static String NO_META_DATA_TO_SERVER = "Нет мета данных для сервера";
+    public static String ERROR_PROCESSING_BLOCK_ON_SERVER = "Ошибка обработки блока на сервере: ";
+    public static String EMPTY_TABLE_NAME = "Имя таблицы пустое";
+    public static String TABLE_NAME_NOT_FOUND = "Имя таблицы не найдено в локальной БД: ";
+    public static String QUERY_METHOD_MISSMATCH = "Метод результата %s должен быть Query. Текущее значение %s";
+    public static String ABSTRACT_DAO_IS_NULL = "AbstractDao is null";
+    public static String TABLE_INSERT_ERROR = "Ошибка вставки записей в таблицу ";
+    public static String CAN_NOT_FIND_TABLE_PRIMARY_KEY = "Колонка для первичного ключа таблицы %s не найдена";
+    public static String ERROR_UPDATE_POSITIVE_RESULT_IN_DB = "Ошибка обновления положительного результата в БД. Запрос: ";
+    public static String COORDINATES = "Координаты: %1$s~%2$s";
+    public static String STARTING_SYNC_PROCESS = "Запуск процесса синхронизации";
+    public static String CHECKING_SERVER_CONNECTION = "Проверка подключения к серверу";
+    public static String PACKAGE_PROCESSING_ERROR = "Ошибка обработки пакета, содержание ошибки: ";
+    public static String NO_AVAILABLE_POINTS = "Нет доступных точек маршрутов";
+    public static String BUILDING_POINTS_IN_PROCESS = "Идет построение точек маршрутов";
+    public static String QUANTITY = "Количество ";
+    public static String SAVED = "Сохранено ";
+    public static String UPDATED = "Обновлено ";
+    public static String DISABLED = "Отключено ";
+    public static String EMPTY_META = "Пустой объект 'meta'";
+    public static String PROCESSING_ATTACHMENT_ERROR = "При обработке вложения %s возникла ошибка";
+    public static String ENTITY_IS_NULL = "null вместо таблицы ";
+    public static String WEBSOCKET_CONNECTION_UNAVAILABLE = "Подключение к серверу по websocket не доступно";
+    public static String TID_NULL_ASSIGNMENT_ERROR = "Ошибка обнуления tid для таблицы ";
+    public static String NO_JSON_KEY_OR_OBJECT = "Нет данных по ключу либо нет самого ключа ";
+    public static String META_INFO_READ_ERROR = "Ошибка чтения мета информации: ";
+    public static String ERROR_READ_PACKAGE_STATUS = "Ошибка чтения статуса пакета (символ 16): ";
+    public static String PACKAGE_LENGTH_LESS_THEN_16 = "Длина пакета меньше 16";
+    public static String ERROR_READING_JSON = "Ошибка при попытке чтения JSON ";
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        GeneralPreferences.createInstance(getApplicationContext());
+        initConstants();
+    }
+
+    private void initConstants() {
+        USER_AUTHORIZED = getString(R.string.user_authorized);
+        AUTH_RESULT_FORMAT_NOT_JSON = getString(R.string.auth_result_format_not_json);
+        ERROR = getString(R.string.error);
+        ERROR_ENG = getString(R.string.error_eng);
+        AUTH_RESPONSE_TRANSFORMATION_ERROR = getString(R.string.auth_response_transformation_error);
+        ERROR_CREATING_AUTH_REQUEST = getString(R.string.error_creating_auth_request);
+        ERROR_CREATING_RESTORE_REQUEST = getString(R.string.error_creating_restore_request);
+        GENERAL_AUTH_ERROR = getString(R.string.general_auth_error);
+        SERVER_JSON_PARSE_ERROR = getString(R.string.server_json_parse_error);
+        AUTH_RESTORE_SUCCESS = getString(R.string.auth_restore_success);
+        CONNECTION_ERROR_WITH_CODE = getString(R.string.connection_error_with_code);
+        DOWNLOAD_PROBLEM = getString(R.string.download_problem);
+        UNKNOWN_ENG = getString(R.string.unknown_eng);
+        NOTIFICATION = getString(R.string.notification);
+        LOCATION_SERVICE_NOTIFICATION_CHANNEL_DESCRIPTION = getString(R.string.service_channel_description);
+        LOCATION_SERVICE_CHANNEL_NAME = getString(R.string.location_sevice);
+        LOCATION_SERVICE_DESCRIPTION_MESSAGE = getString(R.string.location_service_description_message);
+        DEFAULT_NOTIFICATION_CHANNEL_DESCRIPTION = getString(R.string.default_notification_channel_description);
+        DEFAULT_NOTIFICATIONS_CHANNEL_NAME = getString(R.string.default_notification_channel_name);
+        ERROR_NO_DB_CONNECTION = getString(R.string.error_no_db_connection);
+        ERROR_NO_AUTHORIZATION_DATA = getString(R.string.error_no_authorization_data);
+        TASK_SAVED_SUCCESSFULLY = getString(R.string.task_save_successfully);
+        SENDED_RESULT_IS_NOT_JSON = getString(R.string.sended_result_not_json);
+        SOCKET_PROBLEM = getString(R.string.socket_problem);
+        ATTACHMENTS = getString(R.string.attachments);
+        COMMON = getString(R.string.common);
+        DICTIONARY = getString(R.string.dictionary);
+        META_PACKAGE_CREATE_ERROR_MESSAGE = getString(R.string.meta_package_create_error_message);
+        NO_TID_IN_TID_LIST = getString(R.string.no_tid_in_tid_list);
+        META_SIZE_CREATE_ERROR_MESSAGE = getString(R.string.meta_size_create_error_message);
+        META_SIZE_STATUS_WRONG_MESSAGE = getString(R.string.meta_size_status_wrong_message);
+        SYNC_COMPLETED = getString(R.string.sync_completed);
+        FILE_PACKAGE = getString(R.string.file_package);
+        FILE_TID_IS_EMPTY = getString(R.string.file_tid_is_empty);
+        NO_META_DATA_FROM_SERVER = getString(R.string.no_meta_data_from_server);
+        ERROR_PROCESSING_BLOCK_ON_SERVER = getString(R.string.error_processing_block_on_server);
+        EMPTY_TABLE_NAME = getString(R.string.empty_table_name);
+        TABLE_NAME_NOT_FOUND = getString(R.string.table_name_not_found);
+        QUERY_METHOD_MISSMATCH = getString(R.string.query_method_missmatch);
+        ABSTRACT_DAO_IS_NULL = getString(R.string.abstract_dao_is_null);
+        TABLE_INSERT_ERROR = getString(R.string.table_insert_error);
+        CAN_NOT_FIND_TABLE_PRIMARY_KEY = getString(R.string.can_not_find_table_primary_key);
+        NO_META_DATA_TO_SERVER = getString(R.string.no_meta_data_to_server);
+        ERROR_UPDATE_POSITIVE_RESULT_IN_DB = getString(R.string.error_update_positive_result_in_db);
+        STARTING_SYNC_PROCESS = getString(R.string.starting_sync_process);
+        CHECKING_SERVER_CONNECTION = getString(R.string.checking_server_connection);
+        PACKAGE_PROCESSING_ERROR = getString(R.string.package_processing_error);
+        NO_AVAILABLE_POINTS = getString(R.string.no_available_points);
+        BUILDING_POINTS_IN_PROCESS = getString(R.string.building_points_in_process);
+        COORDINATES = getString(R.string.coordinates);
+        QUANTITY = getString(R.string.quantity);
+        SAVED = getString(R.string.saved);
+        UPDATED = getString(R.string.updated);
+        DISABLED = getString(R.string.disabled);
+        EMPTY_META = getString(R.string.empty_meta);
+        PROCESSING_ATTACHMENT_ERROR = getString(R.string.processing_attachment_error);
+        ENTITY_IS_NULL = getString(R.string.entity_is_null);
+        WEBSOCKET_CONNECTION_UNAVAILABLE = getString(R.string.websocket_connection_unavailable);
+        TID_NULL_ASSIGNMENT_ERROR = getString(R.string.tid_null_assignment_error);
+        NO_JSON_KEY_OR_OBJECT = getString(R.string.no_json_key_or_object);
+        META_INFO_READ_ERROR = getString(R.string.meta_info_read_error);
+        ERROR_READ_PACKAGE_STATUS = getString(R.string.error_read_package_status);
+        PACKAGE_LENGTH_LESS_THEN_16 = getString(R.string.package_length_less_then_16);
+        ERROR_READING_JSON = getString(R.string.error_reading_json);
+    }
+
+}
